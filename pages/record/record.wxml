@@ -1,0 +1,43 @@
+<view bindscroll="scroll" bindtouchend="touchmove" bindtouchstart="touchmove" style="height: 100vh;">
+    <view class="scroll-view-item">
+        <view class="container">
+            <view class="page-body">
+                <view class="btn-area" style="margin-top: 30rpx;"></view>
+                <view class="weui-cells__title is-relative">
+                    <text>【获得记录】</text>
+                    <text bindtap="copyUser" class="total" wx:if="{{userid}}">  
+         用户ID：{{userid}} [点击复制]
+          </text>
+                </view>
+                <view class="clear_10"></view>
+                <view class="page-section page-section-gap" wx:if="{{recordList.length}}">
+                    <view bindtap="preview" class="video-item status expired" wx:for="{{recordList}}" wx:key="index">
+                        <view class="task-type">
+                            <text class="long-text">【获取类型】：<text class="highlights" selectable="true">{{item.mode==0?'直接获得':''}}{{item.mode==1?'购买获得':''}}{{item.mode==2?'观看广告获得':''}}{{item.mode==3?'观看广告以及分享获得':''}}{{item.mode==null?'未知获得':''}}</text>
+                            </text>
+                        </view>
+                        <text class="long-text">【名称】：<text class="" selectable="true">{{item.name}}</text>
+                        </text>
+                        <view>
+                            <text class="long-text">【卡密】：{{item.key_secret}}</text>
+                        </view>
+                        <view>
+                            <text class="long-text">【创建时间】：{{item.use_time}}</text>
+                        </view>
+                        <view>
+                            <text class="long-text" wx:if="{{item.usetip}}">【使用方法】：{{item.usetip}}</text>
+                        </view>
+                        <view class="right">
+                            <button bindtap="copyUsetip" class="mini-btn" data-key="{{index}}" size="mini" type="default" wx:if="{{item.usetip}}">复制使用方法</button>
+                            <button bindtap="copykm" class="mini-btn" data-key="{{index}}" size="mini" type="default">复制卡密</button>
+                        </view>
+                    </view>
+                </view>
+                <view style="text-align:center;" wx:if="{{recordList.length===0}}">
+                    <text style="text-align:center;" >暂无你卡密记录。</text>
+                </view>
+            </view>
+        </view>
+        <view class="clear_10"></view>
+    </view>
+</view>

@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/chat/index",
+    "pages/art/index",
+    "pages/prompt/index",
+    "pages/record/record"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "resolveAlias": {
+    "~/*": "/*"
+  },
+  "usingComponents": {
+    "custom-loading": "/components/custom-loading/index"
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#dbdbdb",
+    "selectedColor": "#7A67EE",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "pages/chat/index",
+      "text": "聊天",
+      "iconPath": "images/jl.png",
+      "selectedIconPath": "images/jls.png"
+    },
+    {
+      "pagePath": "pages/art/index",
+      "text": "作图",
+      "iconPath": "images/jl.png",
+      "selectedIconPath": "images/jls.png"
+    },
+      {
+        "pagePath": "pages/index/index",
+        "text": "发卡",
+        "iconPath": "images/fk.png",
+        "selectedIconPath": "images/fks.png"
+      },
+      {
+        "pagePath": "pages/record/record",
+        "text": "记录",
+        "iconPath": "images/jl.png",
+        "selectedIconPath": "images/jls.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxc95a195038c8573d",
+    "wx3172e60c8c16e41d",
+    "wxb5eaea6cacc7e49e"
+  ],
+  "sitemapLocation": "sitemap.json"
+}
